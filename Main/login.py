@@ -21,11 +21,19 @@ def theme():
 
 def login():
     print("Login")
-    print(f"ID : {entry1.get()}")
-    print(f"PW : {entry2.get()}")
+    if (entry1.get() == ''):
+        print("Please Write ID")
+    elif (entry2.get() == ''):
+        print("Please Wirte Password")
+    else:
+        print(f"ID : {entry1.get()}")
+        print(f"PW : {entry2.get()}")
 
 def signup():
     print("Sign Up")
+
+def enter_to_login(value):
+    login()
 
 frame = customtkinter.CTkFrame(master=root, width=500, height=350)
 frame.pack(padx=60, pady=20, fill="both", expand=True)
@@ -38,7 +46,7 @@ entry1.pack(padx=10, pady=5)
 
 entry2 = customtkinter.CTkEntry(master=frame, placeholder_text="Password", show="*")
 entry2.pack(padx=10, pady=5)
-entry2.bind("<Return>", command=login)
+entry2.bind("<Return>", command=enter_to_login)
 
 login_button = customtkinter.CTkButton(master=frame, text="Login", command=login)
 login_button.pack(padx=10, pady=5)
