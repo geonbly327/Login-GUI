@@ -60,4 +60,7 @@ checkbox.pack(padx=10, pady=20)
 theme_button = customtkinter.CTkButton(master=frame, text="Theme", command=theme)
 theme_button.pack(padx=10, pady=5)
 
+out_button = customtkinter.CTkButton(master=frame, text="Out", command=root.destroy)
+out_button.pack(padx=10, pady=5)
+
 root.mainloop()
