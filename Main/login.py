@@ -1,5 +1,6 @@
 import customtkinter
 import tkinter
+import tkinter.messagebox
 import time
 
 class App:
@@ -59,10 +60,11 @@ class App:
         print("Login")
 
         if (self.entry1.get() == ''):
-            print("Please Write ID")
+            self.warning_msgbox("Please Write ID")
         elif (self.entry2.get() == ''):
-            print("Please Wirte Password")
+            self.warning_msgbox("Please Wirte Password")
         else:
+            self.info_msgbox("Login Success")
             print(f"ID : {self.entry1.get()}")
             print(f"PW : {self.entry2.get()}")
 
@@ -74,8 +76,16 @@ class App:
     def enter_to_login(self, value) -> None:
         self.login()
 
+    # Info Messagebox
+    def info_msgbox(self, text):
+        tkinter.messagebox.showinfo('Info', text)
+
+    # Warning Messagebox
+    def warning_msgbox(self, text):
+        tkinter.messagebox.showwarning('Warning', text)
+
 if __name__ == "__main__":
-    #appearance_mode 초기화
+    # appearance_mode 초기화
     appearance_mode = "dark"
 
     customtkinter.set_appearance_mode(appearance_mode)
