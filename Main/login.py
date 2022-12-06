@@ -53,6 +53,7 @@ class App:
         self.exit_button.pack(padx=10, pady=5)
 
     # theme 함수 : appearance_mode에 따라 테마 변경
+    @deco
     def theme(self) -> None:
         global appearance_mode
 
@@ -78,6 +79,7 @@ class App:
             self.info_msgbox("Login Success")
 
     # signup 함수
+    @deco
     def signup(self) -> None:
         pass
 
