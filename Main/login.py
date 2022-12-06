@@ -3,6 +3,14 @@ import tkinter
 import tkinter.messagebox
 import time
 
+# decorator
+def deco(func):
+    def wrapper(*args):
+        print(f'---{func.__name__} start---')
+        func(*args)
+        print(f'---{func.__name__} end---')
+    return wrapper
+
 class App:
     def __init__(self, master) -> None:
         self.master = master
@@ -56,6 +64,7 @@ class App:
             appearance_mode = "dark"
 
     # login 함수 : ID, PW가 입력되었는지 확인하고 ID, PW 출력
+    @deco
     def login(self) -> None:
         print("Login")
 
@@ -64,13 +73,13 @@ class App:
         elif (self.entry2.get() == ''):
             self.warning_msgbox("Please Wirte Password")
         else:
-            self.info_msgbox("Login Success")
             print(f"ID : {self.entry1.get()}")
             print(f"PW : {self.entry2.get()}")
+            self.info_msgbox("Login Success")
 
     # signup 함수
     def signup(self) -> None:
-        print("Sign Up")
+        pass
 
     # enter_to_login 함수
     def enter_to_login(self, value) -> None:
