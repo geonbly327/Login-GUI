@@ -1,13 +1,13 @@
 # __Login-GUI__
 Python의 tkinter와 MySQL을 이용한 간단한 로그인 GUI
->[⌨️ID, PW 입력창](#📌ID,-PW-입력창📌)  
->[🖱️Login 및 Sign Up 버튼](#📌Login-및-Sign-Up-버튼📌)  
->[🖱️Exit 버튼](#📌Exit-버튼📌)  
->[⚙️Theme 변경 함수](#📌Theme-변경-함수📌)  
->[⚙️Login 함수](#📌Login-함수📌)  
->[⚙️Hashing 함수](#📌Hashing-함수📌)  
->[⚙️Salting 함수](#📌Salting-함수📌)  
->[⚙️PW 확인 함수](#📌PW-확인-함수📌)  
+>[⌨️ID, PW 입력창](#📌id-pw-입력창📌)  
+>[🖱️Login 및 Sign Up 버튼](#📌login-및-sign-up-버튼📌)  
+>[🖱️Exit 버튼](#📌exit-버튼📌)  
+>[⚙️Theme 변경 함수](#📌theme-변경-함수📌)  
+>[⚙️Login 함수](#📌login-함수📌)  
+>[⚙️Hashing 함수](#📌hashing-함수📌)  
+>[⚙️Salting 함수](#📌salting-함수📌)  
+>[⚙️PW 확인 함수](#📌pw-확인-함수📌)  
 ***
 ### __📌ID, PW 입력창📌__
 ```python
