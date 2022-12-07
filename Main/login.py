@@ -3,6 +3,8 @@ import tkinter
 import tkinter.messagebox
 import time
 
+import hash
+
 # decorator
 def deco(func):
     def wrapper(*args):
