@@ -3,7 +3,7 @@ import random
 import string
 
 #hash_password 함수 : password를 salt와 함께 해싱하여 반환
-def hash_password(password) -> tuple(hashlib.sha256, str):
+def hash_password(password) -> tuple([hashlib.sha256, str]):
     salt = _salt()
     password = password + salt
 
