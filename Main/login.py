@@ -78,7 +78,7 @@ class App:
             self.warning_msgbox("Please Wirte Password")
         else:
             data = select(self.entry1.get())
-            if data == []:
+            if data == ():
                 self.warning_msgbox("ID not exists")
                 pass
             else:
@@ -92,7 +92,7 @@ class App:
     @deco
     def signup(self) -> None:
         data = select(self.entry1.get())
-        if data != []:
+        if data != ():
             self.warning_msgbox("This ID already exists")
             pass
         else:

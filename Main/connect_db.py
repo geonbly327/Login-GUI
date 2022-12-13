@@ -16,11 +16,7 @@ def select(id):
         with db.cursor(cursors.DictCursor) as cur:
             sql = "SELECT * FROM user where id = %s"
             cur.execute(sql, (id))
-            result = cur.fetchall()
-
-            data = []
-            for i in result:
-                data.append(i)
+            data = cur.fetchall()
 
             return data
 
