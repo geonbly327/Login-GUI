@@ -77,9 +77,16 @@ class App:
         elif (self.entry2.get() == ''):
             self.warning_msgbox("Please Wirte Password")
         else:
-            print(f"ID : {self.entry1.get()}")
-            print(f"PW : {self.entry2.get()}")
-            self.info_msgbox("Login Success")
+            data = select(self.entry1.get())
+            if data == []:
+                self.warning_msgbox("ID not exists")
+                pass
+            else:
+                salt = data[0]["salt"]
+                if verify_password(self.entry2.get(), data[0]["pw"], salt):
+                    self.info_msgbox("Login Success")
+                else:
+                    self.warning_msgbox("PW is not correct")
 
     # signup 함수
     @deco
