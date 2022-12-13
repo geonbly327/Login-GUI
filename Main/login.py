@@ -93,6 +93,7 @@ class App:
             hashed_pw = hash_password(self.entry2.get(), salt)
 
             insert(self.entry1.get(), hashed_pw, salt)
+            self.info_msgbox("Sign Up Success")
 
     # enter_to_login 함수
     def enter_to_login(self, value) -> None:
