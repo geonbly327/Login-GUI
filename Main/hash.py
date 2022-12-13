@@ -7,7 +7,7 @@ def hash_password(password, salt) -> hashlib.sha256:
     password = password + salt
     hashed_password = hashlib.sha256(password.encode())
 
-    return hashed_password
+    return hashed_password.hexdigest()
 
 #create_salt 함수 : salt를 생성하여 반환
 def create_salt() -> str:
@@ -21,11 +21,12 @@ def verify_password(password, user_password, salt) -> bool:
     password = password + salt
     hashed_password = hashlib.sha256(password.encode())
 
-    return True if hashed_password.hexdigest() == user_password.hexdigest() else False
+    return True if hashed_password.hexdigest() == user_password else False
 
 if __name__ == "__main__":
     password = input("Enter password: ")
-    hashed_password, salt = hash_password(password)
+    salt = create_salt()
+    hashed_password = hash_password(password, salt)
     print(f"salt : {salt}")
     print(f"hashed_password : {hashed_password}")
     print(f"sha256 : {hashed_password.hexdigest()}")
