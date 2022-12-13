@@ -84,7 +84,15 @@ class App:
     # signup 함수
     @deco
     def signup(self) -> None:
-        pass
+        data = select(self.entry1.get())
+        if data != []:
+            self.warning_msgbox("This ID already exists")
+            pass
+        else:
+            salt = create_salt()
+            hashed_pw = hash_password(self.entry2.get(), salt)
+
+            insert(self.entry1.get(), hashed_pw, salt)
 
     # enter_to_login 함수
     def enter_to_login(self, value) -> None:
