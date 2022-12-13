@@ -25,5 +25,6 @@ def select(id):
             return data
 
 if __name__ == "__main__":
-    data = fetch()
+    id = input()
+    data = select(id)
     print(data)
