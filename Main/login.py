@@ -91,6 +91,10 @@ class App:
     # signup 함수
     @deco
     def signup(self) -> None:
+        if len(self.entry1.get()) > 30:
+            self.warning_msgbox("ID is too long")
+            return
+
         data = select(self.entry1.get())
         if data != ():
             self.warning_msgbox("This ID already exists")
