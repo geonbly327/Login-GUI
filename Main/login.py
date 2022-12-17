@@ -24,23 +24,27 @@ class App:
 
         # label
         self.label = customtkinter.CTkLabel(master=self.frame, text="Login", font=("Arial", 20, "bold"))
-        self.label.pack(padx=10, pady=12)
+        self.label.pack(padx=60, pady=20, fill="both", expand=True)
+
+        # Login Frame : Login entry 및 button
+        self.login_frame = customtkinter.CTkFrame(master=self.frame)
+        self.login_frame.pack(padx=0, pady=0)
 
         # ID Entry : ID 입력, Tab 키로 PW로 전환 가능
-        self.entry1 = customtkinter.CTkEntry(master=self.frame, placeholder_text="ID", takefocus=False)
+        self.entry1 = customtkinter.CTkEntry(master=self.login_frame, placeholder_text="ID", takefocus=False)
         self.entry1.pack(padx=10, pady=5)
 
         # PW Entry : PW 입력, Enter 키로 login 함수 호출 가능
-        self.entry2 = customtkinter.CTkEntry(master=self.frame, placeholder_text="Password", show="*")
+        self.entry2 = customtkinter.CTkEntry(master=self.login_frame, placeholder_text="Password", show="*")
         self.entry2.pack(padx=10, pady=5)
         self.entry2.bind("<Return>", command=self.enter_to_login)
 
         # Login Button : login 함수 호출
-        self.login_button = customtkinter.CTkButton(master=self.frame, text="Login", command=self.login, state="normal")
+        self.login_button = customtkinter.CTkButton(master=self.login_frame, text="Login", command=self.login, state="normal")
         self.login_button.pack(padx=10, pady=5)
 
         # Sign Up Button : signup 함수 호출
-        self.signup_button = customtkinter.CTkButton(master=self.frame, text="Sign Up", command=self.signup)
+        self.signup_button = customtkinter.CTkButton(master=self.login_frame, text="Sign Up", command=self.signup)
         self.signup_button.pack(padx=10, pady=5)
 
         # Remember Me CheckBox
