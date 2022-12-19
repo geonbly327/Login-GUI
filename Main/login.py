@@ -48,8 +48,8 @@ class App:
         self.signup_button.pack(padx=10, pady=5)
 
         # Remember Me CheckBox
-        self.checkbox = customtkinter.CTkCheckBox(master=self.frame, text="Remember ME")
-        self.checkbox.pack(padx=10, pady=20)
+        self.checkbox = customtkinter.CTkCheckBox(master=self.login_frame, text="Remember ME")
+        self.checkbox.pack(padx=10, pady=10)
 
         # Theme Button : 테마 변경
         self.theme_button = customtkinter.CTkButton(master=self.frame, text="Theme", command=self.theme, width=100, height=25)
