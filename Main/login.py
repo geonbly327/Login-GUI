@@ -39,6 +39,10 @@ class App:
         self.entry2.pack(padx=10, pady=5)
         self.entry2.bind("<Return>", command=self.enter_to_login)
 
+        # Remember Me CheckBox
+        self.checkbox = customtkinter.CTkCheckBox(master=self.login_frame, text="Remember ME")
+        self.checkbox.pack(padx=10, pady=10)
+
         # Login Button : login 함수 호출
         self.login_button = customtkinter.CTkButton(master=self.login_frame, text="Login", command=self.login, state="normal")
         self.login_button.pack(padx=10, pady=5)
@@ -46,10 +50,6 @@ class App:
         # Sign Up Button : signup 함수 호출
         self.signup_button = customtkinter.CTkButton(master=self.login_frame, text="Sign Up", command=self.signup)
         self.signup_button.pack(padx=10, pady=5)
-
-        # Remember Me CheckBox
-        self.checkbox = customtkinter.CTkCheckBox(master=self.login_frame, text="Remember ME")
-        self.checkbox.pack(padx=10, pady=10)
 
         # Theme Button : 테마 변경
         self.theme_button = customtkinter.CTkButton(master=self.frame, text="Theme", command=self.theme, width=100, height=25)
