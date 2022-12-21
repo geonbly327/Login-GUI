@@ -3,6 +3,7 @@ import tkinter
 import tkinter.messagebox
 import time
 
+#hash, connect_db 모듈 imoort
 from hash import *
 from connect_db import *
 
