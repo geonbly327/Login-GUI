@@ -53,8 +53,8 @@ class App:
         self.signup_button.pack(padx=10, pady=5)
 
         # Theme Button : 테마 변경
-        self.theme_button = customtkinter.CTkButton(master=self.frame, text="Theme", command=self.theme, width=100, height=25)
-        self.theme_button.pack(padx=10, pady=5)
+        self.theme_menu = customtkinter.CTkOptionMenu(master=self.frame, width=100, height=20, values=["Light", "Dark", "System"], command=self.theme)
+        self.theme_menu.pack(padx=10, pady=5)
 
         # Exit Button : 종료
         self.exit_button = customtkinter.CTkButton(master=self.frame, text="Exit", command=root.destroy, width=100, height=25)
@@ -62,15 +62,8 @@ class App:
 
     # theme 함수 : appearance_mode에 따라 테마 변경
     @deco
-    def theme(self) -> None:
-        global appearance_mode
-
-        if appearance_mode == "dark":
-            customtkinter.set_appearance_mode("light")
-            appearance_mode = "light"
-        else:
-            customtkinter.set_appearance_mode("dark")
-            appearance_mode = "dark"
+    def theme(self, mode) -> None:
+        customtkinter.set_appearance_mode(mode)
 
     # login 함수 : ID, PW가 입력되었는지 확인하고 ID, PW 출력
     @deco
@@ -125,7 +118,7 @@ class App:
 
 if __name__ == "__main__":
     # appearance_mode 초기화
-    appearance_mode = "dark"
+    appearance_mode = "light"
 
     customtkinter.set_appearance_mode(appearance_mode)
     customtkinter.set_default_color_theme("green")
