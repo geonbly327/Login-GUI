@@ -68,29 +68,17 @@ command=root.destroy
 ```python
 # theme 함수
 @deco
-def theme(self) -> None:
-    global appearance_mode
-
-    if appearance_mode == "dark":
-        customtkinter.set_appearance_mode("light")
-        appearance_mode = "light"
-    else:
-        customtkinter.set_appearance_mode("dark")
-        appearance_mode = "dark"
+def theme(self, mode) -> None:
+    customtkinter.set_appearance_mode(mode)
 ```
-기본값은 dark 테마
+기본값은 light 테마
 ```python
 # appearance_mode 초기화
-appearance_mode = "dark"
+appearance_mode = "light"
 ```
-현제 appearance_mode에 따라 테마 및 appearance_mode 변경
+인자에 따라 appearance_mode 설정
 ```python
-if appearance_mode == "dark":
-    customtkinter.set_appearance_mode("light")
-    appearance_mode = "light"
-else:
-    customtkinter.set_appearance_mode("dark")
-    appearance_mode = "dark"
+customtkinter.set_appearance_mode(mode)
 ```
 #
 ### __📌Login 함수📌__
