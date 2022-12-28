@@ -165,3 +165,14 @@ def verify_password(password, user_password, salt) -> bool:
 ```python
 True if hashed_password.hexdigest() == user_password.hexdigest() else False
 ```
+#
+### __📌Theme 옵션 메뉴📌__
+```python
+# Theme Button : 테마 변경
+self.theme_menu = customtkinter.CTkOptionMenu(master=self.frame, width=100, height=20, values=["Light", "Dark", "System"], command=self.theme)
+self.theme_menu.pack(padx=10, pady=5)
+```
+옵션으로 dark, light, system의 선택 옵션 존재
+```python
+self.theme_menu = customtkinter.CTkOptionMenu(master=self.frame, width=100, height=20, values=["Light", "Dark", "System"], command=self.theme)
+```
