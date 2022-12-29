@@ -132,8 +132,8 @@ hashed_password = hashlib.sha256(password.encode())
 #
 ### __📌Salting 함수📌__
 ```python
-#_salt 함수
-def _salt() -> str:
+#create_salt 함수 : salt를 생성하여 반환
+def create_salt() -> str:
     count = random.randint(16, 21)
     string_store = string.ascii_letters + string.digits + string.punctuation
     salt = "".join(random.choices(string_store, k=count))
